@@ -10,6 +10,10 @@ app = Flask(__name__)
 CORS(app)  # This will enable CORS for all routes
 app.config["CORS_HEADERS"] = "Content-Type"
 
+@app.route("/")
+def hello():
+    return "Flask is running"
+
 
 @app.route("/register", methods=["POST"])
 @cross_origin()
